@@ -28,8 +28,8 @@ async def read_todo(id:int  ) -> dict:
     return {"message": "READ::TODO"}
 
 #Update
-@router.put("/todo")
-async def put_todo() -> dict:
+@router.put("/todo/{id}")
+async def put_todo(id:int, todo_item:Item) -> dict:
     return {"message": "PUT::TODO"}
 
 # Delete
