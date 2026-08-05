@@ -9,7 +9,7 @@ class Todo(BaseModel):
     id:int
 
 todo_list = []
-
+A
 #create
 @router.post("/todo")
 async def create_todo() -> dict:
