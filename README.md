@@ -1,2 +1,2 @@
 # ai-service-platform
-FastAPI 학습
+FastAPI, React, DB 연동 서비스

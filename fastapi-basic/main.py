@@ -1,23 +1,20 @@
 from fastapi import FastAPI
-from routes.hello import router as hello_router
-from routes.todo import router as todo_router
+from routers.hello import hello_router
+from routers.todo import todo_router
 
+app = FastAPI() # FastAPI 서버 생성 
 
-
-app=FastAPI() #fastapi 서버 생성
-
-@app.get("/") # http://127.0.0.1:8000/ 접속시 호출되는 함수
-async def welcome() -> dict: # {key:value} 형태의 dict 반환 json 타입
+@app.get("/")
+async def welcome() -> dict:   # { key: value ...}
     return {
-        "message": "GET:: Hello FastAPI!"
+        "message": "GET:: welcome to FastAPI world!!"
     }
 
-@app.post("/") # http://127.0.0.1:8000/ 접속시 호출되는 함수
-async def welcome() -> dict: # {key:value} 형태의 dict 반환 json 타입
+@app.post("/")
+async def welcome() -> dict:   # { key: value ...}
     return {
-        "message": "POST:: Hello FastAPI!"
+        "message": "POST:: welcome to FastAPI world!!"
     }
 
-
-app.include_router(hello_router) # hello.py 라우터 등록
-app.include_router(todo_router) # todo.py 라우터 등록
+app.include_router(hello_router)
+app.include_router(todo_router)
